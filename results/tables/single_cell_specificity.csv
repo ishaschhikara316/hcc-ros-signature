@@ -1,0 +1,12 @@
+gene,top_cell_type,hepatocyte_expr,immune_expr,stromal_expr,likely_origin
+TXNRD1,Smooth Muscle Cells,109.0,23.25,89.66666666666667,Tumor-intrinsic (hepatocyte)
+MAFG,Smooth Muscle Cells,23.2,21.75,42.0,Stromal
+G6PD,T-Cells,0.8,40.25,27.666666666666668,Immune-derived
+SQSTM1,Hepatocytes,456.4,92.0,218.66666666666666,Tumor-intrinsic (hepatocyte)
+SLC7A11,Fibroblasts,0.6,0.08333333333333333,2.3333333333333335,Stromal
+GSR,Hepatocytes,60.2,21.0,16.333333333333332,Tumor-intrinsic (hepatocyte)
+NCF2,Kupffer Cells,0.8,48.416666666666664,4.666666666666667,Immune-derived
+MSRA,Hepatocytes,162.8,18.166666666666668,25.0,Tumor-intrinsic (hepatocyte)
+HMOX1,Kupffer Cells,32.4,271.0,25.666666666666668,Immune-derived
+GLRX2,Hepatocytes,64.4,12.5,20.666666666666668,Tumor-intrinsic (hepatocyte)
+BACH1,Kupffer Cells,34.6,22.75,30.333333333333332,Tumor-intrinsic (hepatocyte)

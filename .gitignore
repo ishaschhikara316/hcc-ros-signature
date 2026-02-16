@@ -1,0 +1,7 @@
+# Downloaded/cached data (large files, auto-downloaded by scripts)
+data/
+
+# Python
+__pycache__/
+*.pyc
+.DS_Store

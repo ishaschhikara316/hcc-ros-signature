@@ -1,0 +1,12 @@
+gene,coef,normal_liver_protein,normal_liver_cell_types,hcc_dominant_staining,hcc_pct_positive,hcc_n_patients,mrna_protein_concordant
+TXNRD1,0.1120338366802685,High,cholangiocytes; hepatocytes,Medium,100%,11,True
+MAFG,0.1842587754794873,Medium,cholangiocytes; hepatocytes,Medium,100%,12,True
+G6PD,0.10802717885226372,Medium,cholangiocytes; hepatocytes,Not detected,45%,11,False
+SQSTM1,0.030340661397387215,Low,cholangiocytes; hepatocytes,Low,83%,12,False
+SLC7A11,0.05690420783056198,No data,N/A,N/A,N/A,0,
+GSR,0.07674462973682145,Medium,cholangiocytes; hepatocytes,Medium,100%,10,True
+NCF2,0.08196776795249792,Not detected,cholangiocytes; hepatocytes,Not detected,0%,12,False
+MSRA,-0.22603390591652062,Low,cholangiocytes; hepatocytes,Not detected,27%,11,True
+HMOX1,0.04199929049239207,Not detected,cholangiocytes; hepatocytes,Not detected,8%,12,False
+GLRX2,0.16752373916884666,Medium,cholangiocytes; hepatocytes,Not detected,33%,12,False
+BACH1,0.03624954929392105,Not detected,cholangiocytes; hepatocytes,Not detected,25%,12,False
