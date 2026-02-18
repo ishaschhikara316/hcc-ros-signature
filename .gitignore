@@ -5,3 +5,7 @@ data/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Local planning/notes (not for public repo)
+plan.md
+figure_plan.md
