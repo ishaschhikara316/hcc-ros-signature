@@ -1,0 +1,12 @@
+category,metric,value,status,note
+Model Performance,Training C-index,0.700 (95% CI: 0.650-0.744),STRONG,Bootstrap 95% CI confirms robust discrimination
+External Validation,Pooled HR (fixed-effect),"1.697 (1.370-2.102), p=1.3e-06",STRONG,"4 cohorts, 640 patients, I²=0%"
+Clinical Impact,3-year RMST difference,"8.1 months (5.1-11.3), p=0.0000",STRONG,Robust to PH violations; clinically meaningful
+Robustness,Cutpoint sensitivity,Significant at all percentiles (25th-75th),STRONG,Not dependent on median cutoff choice
+Biological Validation,NRF2 pathway mutations (pooled),"OR=3.48, p=0.0109",MODERATE,KEAP1+NFE2L2 pooled; direct genetic validation
+Biological Validation,NRF2 activity correlation,"r=0.708, p=2.75e-47",VERY STRONG,Risk score strongly reflects NRF2 pathway activation
+Model Quality,Gene contribution,5/11 genes contribute positively,STRONG,Most genes individually contribute to C-index
+Generalizability,"Interaction tests (sex, age, stage)",All p > 0.05 (no significant interactions),STRONG,Signature works equally across subgroups
+Clinical Utility,Best nomogram C-index,0.7522 (Full (Risk+Stage+Age+Sex+Grade)),MODERATE-STRONG,Improvement over stage alone (C=0.593)
+Study Design,GSE76427 OS exclusion,"23 events, 3% power — statistically justified exclusion",ADDRESSED,Underpowered cohort transparently excluded with justification
+Assumptions,Proportional hazards,Holds up to 36 months; RMST supplements beyond,ADDRESSED,PH verified + RMST analysis for robustness

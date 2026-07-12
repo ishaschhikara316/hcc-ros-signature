@@ -1,0 +1,23 @@
+item,category,requirement,status,evidence
+1,Title,Identify as prediction model study; specify development/validation,Met,Title identifies prognostic signature development and multi-cohort validation
+2,Abstract,"Structured summary including methods, results, conclusions",Met,Structured abstract with all required elements
+3a,Introduction,Explain clinical context and prediction model relevance,Met,HCC prognosis context established with ROS/ferroptosis rationale
+4a,Source of data,Describe study design and data sources,Met,"TCGA-LIHC training, 4 external validation cohorts (GEO, ICGC) described"
+5a,Participants,Describe eligibility criteria,Partially met,HCC diagnosis specified; exclusion criteria for missing data should be detailed
+6a,Outcome,Define outcome including timing,Met,"OS defined, time horizons (1,3,5-year) specified"
+7a,Predictors,Define all candidate predictors,Met,"334 ROS/ferroptosis genes from MSigDB, GO, KEGG, Reactome listed"
+8,Sample size,Explain how sample size was determined,Partially met,Post-hoc power analysis provided; pre-study Riley formula calculation needed
+9,Missing data,Describe handling of missing data,Needs addition,Add explicit statement: complete-case analysis used; genes with >20% missing excluded
+10a,Statistical methods,Describe model development,Met,"LASSO-Cox with 5-fold CV, lambda selection, z-score normalization detailed"
+10b,Model specification,Full model specification for reproducibility,Met,"All 11 coefficients, gene means/stds in lasso_model.json"
+10c,Validation,Detail validation methods,Met,"External validation in 4 independent cohorts with C-index, HR, KM, meta-analysis"
+10d,Performance measures,Specify discrimination and calibration measures,Met,"C-index, time-AUC, Brier score, calibration slope/intercept all reported"
+11,Risk groups,Detail any risk grouping approach,Met,Median cutpoint pre-specified; sensitivity analysis across percentiles (25th-75th)
+13,Participants,Describe flow of participants,Partially met,Numbers per cohort reported; formal CONSORT-style flow diagram recommended
+14,Model development,Report model development results,Met,"LASSO path, CV curves, selected genes, coefficients all reported"
+15a,Model performance,Report discrimination and calibration,Met,"C-index with 95% CI, calibration slopes (with cross-platform context), Brier scores"
+16,Validation,Report validation results,Met,4 cohorts validated; meta-analysis HR=1.697 (I²=0%); GSE76427 excluded with justification
+19,Interpretation,Discuss limitations including overfitting risk,Met,Calibration shrinkage acknowledged; computational-only limitation stated; GSE76427 power issue discussed
+20,Implications,Discuss potential clinical use and next steps,Met,Nomogram proposed; wet-lab validation identified as next step
+AI-1,AI/ML Transparency,Report AI/ML methods clearly,Met,LASSO is fully transparent; no black-box components
+AI-2,AI/ML Fairness,Discuss fairness across subgroups,Needs addition,"Add: signature tested across sex, age, ethnicity subgroups via interaction tests (all NS)"

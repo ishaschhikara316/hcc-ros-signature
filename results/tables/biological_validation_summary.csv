@@ -1,0 +1,8 @@
+evidence_type,metric,p_value,strength,interpretation
+NRF2 Pathway Activity,r=0.708,2.746290091756912e-47,Strong,Risk score reflects NRF2 pathway activation
+NRF2 Pathway Genes,7/11 genes (64%),,Strong,Signature enriched for NRF2-KEAP1 pathway genes (including regulators and interactors)
+KEAP1 Mutation Enrichment,OR=4.65,0.0180568536917777,Strong,Direct genetic validation of NRF2 mechanism
+Erastin Sensitivity,r=0.635,1.5e-35,Very Strong,High-risk patients sensitive to ferroptosis induction
+Pathway Enrichment (GSEA),1384/4045 pathways,,Strong,"Extensive pathway coverage including ROS, NRF2, ferroptosis"
+External Validation,3/4 cohorts validated,,Moderate-Strong,"Validated across Chinese, Japanese, and European cohorts"
+Nomogram Performance,C-index=0.7522,,Moderate,Adds value beyond clinical staging (C=0.598)

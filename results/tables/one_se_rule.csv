@@ -1,0 +1,2 @@
+best_lambda,best_CV_cindex,best_CV_std,best_n_genes,1SE_lambda,1SE_CV_cindex,1SE_n_genes,selected_lambda,selected_train_cindex,1SE_threshold,within_1SE
+0.005,0.6951,0.05,17.2,0.5,0.6779,0.0,0.03,0.6999,0.6451,Yes

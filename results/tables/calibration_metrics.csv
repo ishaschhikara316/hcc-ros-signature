@@ -1,0 +1,4 @@
+timepoint,calibration_slope,calibration_intercept,calibration_R2,brier_score,discrimination_note,slope_interpretation,recalibration_needed
+1-year,0.273,0.2037,0.9137,0.2195,"Model optimized for discrimination (patient ranking), not absolute risk prediction",Cross-platform shrinkage expected; recalibration recommended for clinical deployment,Yes - slope < 0.8 indicates cross-platform coefficient shrinkage
+3-year,0.3113,0.4454,0.8439,0.2121,"Model optimized for discrimination (patient ranking), not absolute risk prediction",Cross-platform shrinkage expected; recalibration recommended for clinical deployment,Yes - slope < 0.8 indicates cross-platform coefficient shrinkage
+5-year,0.2807,0.612,0.7307,0.221,"Model optimized for discrimination (patient ranking), not absolute risk prediction",Cross-platform shrinkage expected; recalibration recommended for clinical deployment,Yes - slope < 0.8 indicates cross-platform coefficient shrinkage

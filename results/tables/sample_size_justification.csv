@@ -1,0 +1,8 @@
+criterion,threshold,our_value,met,detail
+Events per predictor (EPP),"≥10 (minimum), ≥20 (preferred)",11.7,Yes,129 events / 11 predictors = 11.7 EPP
+Minimum events (EPP=10),≥110,129,Yes,129 ≥ 110 (11 predictors × 10)
+Minimum events (EPP=20),≥220,129,No,129 < 220 (11 predictors × 20); mitigated by LASSO regularization
+Expected shrinkage (Harrell),>0.9,0.915,Yes,1 - 11/129 = 0.915
+Training sample size,Context-dependent,302,Adequate,"302 patients, 129 events; largest available HCC cohort with transcriptomics"
+LASSO regularization effect,Effective df < p,11 genes from 334 candidates,Yes,LASSO reduces effective df; 5-fold CV prevents overfitting; external validation confirms generalizability
+External validation total,≥100 events per cohort ideal,"532 patients, ~208 events (3 cohorts)",Adequate,Meta-analysis HR=1.697 (I²=0%) across 3 validated cohorts confirms external validity

@@ -1,0 +1,5 @@
+transform,rho,p_value,PH_holds
+identity (time),0.1281,0.148,Yes
+log(time),0.0592,0.5054,Yes
+rank(time),0.1449,0.1014,Yes
+KM(time) [Grambsch-Therneau],0.0084,0.9246,Yes

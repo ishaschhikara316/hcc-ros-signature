@@ -1,0 +1,5 @@
+pathway_removed,genes_removed,n_genes_removed,n_genes_remaining,full_C_index,reduced_C_index,delta_C,delta_CI_lower,delta_CI_upper,p_value,contribution
+Antioxidant defense,"TXNRD1, GSR, GLRX2, G6PD",4,7,0.6999,0.6825,0.0174,-0.0057,0.0446,0.164,Moderate
+NRF2 signaling,"MAFG, BACH1, SQSTM1",3,8,0.6999,0.7007,-0.0008,-0.0164,0.0162,1.084,Redundant
+Ferroptosis regulation,"SLC7A11, HMOX1",2,9,0.6999,0.6997,0.0002,-0.0041,0.0046,0.86,Redundant
+ROS metabolism,"NCF2, MSRA",2,9,0.6999,0.6773,0.0226,-0.0034,0.0477,0.076,Moderate

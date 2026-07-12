@@ -1,0 +1,7 @@
+cohort,n_patients,n_events,observed_HR,estimated_power,adequate_power,events_needed_80pct,events_needed_90pct
+TCGA-LIHC,302,129,3.4,1.0,Yes,21,29
+GSE14520,221,85,1.79,0.765,No,93,124
+ICGC LIRI-JP,231,43,1.78,0.472,No,95,127
+GSE54236,80,80,1.68,0.641,No,117,157
+GSE76427 (OS),115,23,0.49,0.035,No,1390,1861
+GSE76427 (RFS),108,48,1.46,0.258,No,220,294

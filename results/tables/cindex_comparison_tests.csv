@@ -1,0 +1,4 @@
+comparison,C_index_model1,C_index_model2,difference,95%CI_lower,95%CI_upper,p_value
+Risk Score vs Stage,0.7057,0.5934,0.1102,0.0354,0.1781,0.002
+Risk Score vs Age,0.6964,0.518,0.1777,0.1027,0.2509,0.0
+Nomogram vs Risk Score,0.7221,0.7026,0.0195,-0.0057,0.0485,0.128

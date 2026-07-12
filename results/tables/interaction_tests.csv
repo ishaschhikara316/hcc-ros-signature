@@ -1,0 +1,4 @@
+interaction,interaction_HR,interaction_p_Wald,LRT_statistic,LRT_p_value,interpretation
+risk_score × sex,1.8384,0.0656,3.5848,0.0583,Not significant
+risk_score × age (≥60),1.7486,0.157,2.1281,0.1446,Not significant
+risk_score × stage (III/IV),0.9581,0.8757,0.0245,0.8756,Not significant

@@ -1,0 +1,5 @@
+split_time_months,HR_early,p_early,HR_late,p_late,HR_ratio,PH_consistent
+12,3.443,0.0,3.298,0.0,1.044,Yes
+24,3.445,0.0,3.036,0.012,1.135,Yes
+36,3.533,0.0,1.876,0.2914,1.883,Yes
+48,3.593,0.0,0.668,0.6255,5.376,Check

@@ -1,0 +1,12 @@
+gene_removed,coefficient,direction,full_C_index,reduced_C_index,delta_C,delta_CI_lower,delta_CI_upper,p_value,contribution
+MSRA,-0.226,Protective,0.6999,0.6754,0.0245,-0.0001,0.0498,0.052,Contributing
+GLRX2,0.1675,Risk,0.6999,0.6851,0.0148,-0.005,0.036,0.16,Contributing
+GSR,0.0767,Risk,0.6999,0.6917,0.0082,-0.0003,0.0179,0.056,Contributing
+G6PD,0.108,Risk,0.6999,0.6972,0.0028,-0.0035,0.0088,0.4,Contributing
+BACH1,0.0362,Risk,0.6999,0.6986,0.0013,-0.0028,0.0055,0.532,Contributing
+HMOX1,0.042,Risk,0.6999,0.6999,0.0,-0.0022,0.0026,1.064,Minimal
+SLC7A11,0.0569,Risk,0.6999,0.7003,-0.0004,-0.0048,0.0037,1.128,Minimal
+NCF2,0.082,Risk,0.6999,0.7005,-0.0006,-0.0074,0.0055,1.216,Minimal
+SQSTM1,0.0303,Risk,0.6999,0.7012,-0.0013,-0.0037,0.0011,1.68,Minimal
+MAFG,0.1843,Risk,0.6999,0.7024,-0.0025,-0.0165,0.0124,1.252,Minimal
+TXNRD1,0.112,Risk,0.6999,0.7043,-0.0044,-0.0113,0.002,1.768,Minimal

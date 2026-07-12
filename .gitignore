@@ -9,3 +9,23 @@ __pycache__/
 # Local planning/notes (not for public repo)
 plan.md
 figure_plan.md
+
+# AI assistant / editor config
+.claude/
+.mcp.json
+.cursorrules
+.windsurfrules
+.opencode.json
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+
+# Manuscript / paper artifacts (kept out of public repo)
+docs/Research Paper Draft/
+docs/*.docx
+docs/*.tex
+docs/*.bib
+docs/*.ris
+docs/*.enw
+docs/manuscript.pdf
+docs/complete_manuscript_humanized.md

@@ -1,0 +1,4 @@
+comparison,base_model,full_model,C_base,C_full,delta_C,LRT_statistic,LRT_df,LRT_p_value,significant
+Stage + RiskScore vs Stage alone,Stage,Stage + Risk Score,0.5934,0.7144,0.121,45.7981,1.0,1.3108847340959073e-11,Yes
+RiskScore + Clinical vs RiskScore alone,Risk Score,Risk Score + stage_num+age_at_diagnosis+male,0.7026,0.7221,0.0196,10.4207,3.0,0.015308761958317096,Yes
+"Risk Score vs Stage (non-nested, AIC)",Stage (AIC=1077.7),Risk Score (AIC=1038.9),0.5934,0.7057,0.1123,,,,Risk Score preferred

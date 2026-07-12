@@ -1,8 +1,8 @@
 # An 11-Gene ROS/Ferroptosis Prognostic Signature for Hepatocellular Carcinoma
 
-Hepatocellular carcinoma (HCC) is the most common form of primary liver cancer and one of the leading causes of cancer-related deaths worldwide. Outcomes vary enormously between patients — some survive years after diagnosis, others deteriorate within months — and current clinical staging systems do a limited job of predicting who falls where. This project asks whether the molecular biology of oxidative stress and ferroptosis (a form of iron-dependent cell death driven by lipid peroxidation) can help us do better.
+Hepatocellular carcinoma (HCC) is the most common form of primary liver cancer and one of the leading causes of cancer-related deaths worldwide. Outcomes vary enormously between patients (some survive years after diagnosis, others deteriorate within months), and current clinical staging systems do a limited job of predicting who falls where. This project asks whether the molecular biology of oxidative stress and ferroptosis (a form of iron-dependent cell death driven by lipid peroxidation) can help us do better.
 
-Reactive oxygen species (ROS) are a double-edged sword in cancer. At moderate levels, they promote tumor growth and survival signaling. At high levels, they trigger ferroptosis and kill cancer cells. Many HCC tumors rewire their antioxidant defenses — upregulating genes like thioredoxin reductase (TXNRD1), glutathione reductase (GSR), and the cystine transporter SLC7A11 — to keep ROS in a "Goldilocks zone" that supports proliferation without tipping into cell death. We hypothesized that the expression pattern of ROS/ferroptosis genes could serve as a molecular fingerprint that predicts patient survival.
+Reactive oxygen species (ROS) are a double-edged sword in cancer. At moderate levels, they promote tumor growth and survival signaling. At high levels, they trigger ferroptosis and kill cancer cells. Many HCC tumors rewire their antioxidant defenses, upregulating genes like thioredoxin reductase (TXNRD1), glutathione reductase (GSR), and the cystine transporter SLC7A11, to keep ROS in a "Goldilocks zone" that supports proliferation without tipping into cell death. We hypothesized that the expression pattern of ROS/ferroptosis genes could be a molecular fingerprint that predicts patient survival.
 
 ## What We Did
 
@@ -12,7 +12,7 @@ We started with 302 HCC patients from TCGA-LIHC (The Cancer Genome Atlas) and a 
 
 ### Building the Signature
 
-We then used LASSO-penalized Cox regression — a method that simultaneously selects the most informative genes and estimates their prognostic weights — to distill the candidates down to an **11-gene signature**:
+We then used LASSO-penalized Cox regression (a method that simultaneously selects the most informative genes and estimates their prognostic weights) to distill the candidates down to an **11-gene signature**:
 
 | Gene | Role | Direction |
 |------|------|-----------|
@@ -22,13 +22,13 @@ We then used LASSO-penalized Cox regression — a method that simultaneously sel
 | **SQSTM1** | Autophagy receptor (p62); NRF2 pathway activator | Risk |
 | **SLC7A11** | Cystine/glutamate antiporter; ferroptosis suppressor | Risk |
 | **GSR** | Glutathione reductase; maintains reduced glutathione pool | Risk |
-| **NCF2** | NADPH oxidase subunit; superoxide production | Risk |
+| **NCF2** | NADPH oxidase subunit; superoxide production (primarily immune cell-derived, reflects tumor microenvironment) | Risk |
 | **HMOX1** | Heme oxygenase-1; heme catabolism, iron release | Risk |
 | **GLRX2** | Glutaredoxin-2; mitochondrial redox homeostasis | Risk |
-| **BACH1** | Transcriptional repressor of HMOX1 and antioxidant genes | Risk |
+| **BACH1** | NRF2 pathway interactor; competitive repressor of HMOX1 and antioxidant genes | Risk |
 | **MSRA** | Methionine sulfoxide reductase; repairs oxidized proteins | Protective |
 
-Ten of the eleven genes are upregulated in high-risk patients, reflecting a tumor that is actively ramping up antioxidant defenses. The one protective gene, MSRA, is downregulated in aggressive tumors — its loss removes a layer of oxidative damage repair.
+Ten of the eleven genes are upregulated in high-risk patients, reflecting a tumor that is actively ramping up antioxidant defenses. The one protective gene, MSRA, is downregulated in aggressive tumors; its loss removes a layer of oxidative damage repair.
 
 Each patient receives a risk score: a weighted sum of these 11 gene expression values. Patients above the median score are classified as "high-risk."
 
@@ -46,7 +46,7 @@ We validated the signature in three independent cohorts that were not used durin
 | **GSE54236** (additional validation) | 80 | — | 0.621 | 1.68 | 0.007 |
 
 **What these numbers mean:**
-- **C-index** (concordance index): How well the model ranks patients — 0.5 is random guessing, 1.0 is perfect. Our values of 0.60–0.70 indicate moderate-to-good discrimination, which is typical for gene expression signatures in cancer.
+- **C-index** (concordance index): How well the model ranks patients: 0.5 is random guessing, 1.0 is perfect. Our values of 0.60–0.70 indicate moderate-to-good discrimination, which is typical for gene expression signatures in cancer.
 - **HR** (hazard ratio): How much higher the death rate is in the high-risk group versus the low-risk group. An HR of 1.79 means high-risk patients face roughly 80% greater hazard.
 - **Log-rank p**: Whether the survival difference between high- and low-risk groups is statistically significant. Below 0.05 is considered significant.
 - GSE76427 OS was underpowered with only 23 death events, making it difficult to detect a real effect. When we looked at recurrence-free survival instead (48 events), the trend went in the expected direction.
@@ -57,7 +57,7 @@ We validated the signature in three independent cohorts that were not used durin
 A prognostic signature is only useful if it tells you something beyond what you already know from standard clinical variables (age, sex, tumor stage). In multivariate Cox regression:
 
 - **ICGC LIRI-JP**: Risk score remained independently significant (HR=1.79, p=0.004) after adjusting for age, sex, and stage.
-- **GSE14520**: Risk score was borderline (HR=1.57, p=0.056), with TNM stage dominating (p=1.5 x 10⁻⁷) — not surprising given that staging captures a lot of prognostic information in this well-characterized cohort.
+- **GSE14520**: Risk score was borderline (HR=1.57, p=0.056), with TNM stage dominating (p=1.5 x 10⁻⁷), which is not surprising given that staging captures a lot of prognostic information in this well-characterized cohort.
 
 ### Nomogram and Decision Curve Analysis
 
@@ -77,7 +77,7 @@ We compared our signature against three published prognostic signatures on the T
 | Buffa Hypoxia | 15 | 0.610 |
 | MKI67 Proliferation | 4 | 0.637 |
 
-Our signature performs comparably to the best existing signature (Hong et al.) while being rooted in a specific and therapeutically targetable biology — oxidative stress and ferroptosis — rather than generic prognostic genes.
+Our signature performs comparably to the best existing signature (Hong et al.) while being rooted in a specific and therapeutically targetable biology (oxidative stress and ferroptosis) rather than generic prognostic genes.
 
 ## Biological Characterization
 
@@ -85,7 +85,7 @@ Our signature performs comparably to the best existing signature (Hong et al.) w
 
 The signature genes are strongly enriched in exactly the pathways we expected:
 
-- **KEAP1-NRF2 pathway** (9/11 genes, Reactome, p = 1.2 x 10⁻¹⁶) — the master regulator of cellular antioxidant defense
+- **KEAP1-NRF2 pathway** (7/11 genes are NRF2-KEAP1 pathway genes, including regulators and interactors; Reactome, p = 1.2 x 10⁻¹⁶), the master regulator of cellular antioxidant defense
 - **Reactive Oxygen Species Pathway** (9 genes, MSigDB Hallmark, p = 1.3 x 10⁻¹⁹)
 - **Ferroptosis** (3 genes, KEGG, p = 7.6 x 10⁻⁶)
 - **Glutathione metabolism** (4 genes, KEGG, p = 2.2 x 10⁻⁷)
@@ -94,21 +94,21 @@ This confirms the signature is capturing genuine ROS/ferroptosis biology, not ar
 
 ### Immune Checkpoints and Immunotherapy Landscape
 
-We performed a comprehensive analysis of immune checkpoint expression, immune cell infiltration (via ssGSEA with 24 cell type signatures), and immunotherapy response prediction between risk groups:
+We analyzed immune checkpoint expression, immune cell infiltration (via ssGSEA with 24 cell type signatures), and immunotherapy response prediction between risk groups:
 
 - **3 of 9 immune checkpoints** were significantly differentially expressed: SIGLEC15 (strongly downregulated in high-risk, p < 0.0001), LAG3 (p = 0.04), and B7-H3/CD276 (p = 0.05).
 - **5 of 23 immune cell types** showed significant correlation with risk score via ssGSEA, providing a detailed picture of how the tumor immune microenvironment shifts with oxidative stress status.
-- High-risk tumors showed features consistent with immune dysfunction — including decreased NK cell infiltration (r = −0.17, p = 0.003) and increased M1 macrophages (r = 0.12, p = 0.044).
+- High-risk tumors showed features consistent with immune dysfunction, including decreased NK cell infiltration (r = −0.17, p = 0.003) and increased M1 macrophages (r = 0.12, p = 0.044).
 
 ### Genome-Wide Pathway Enrichment (GSEA)
 
 Rather than limiting enrichment analysis to the 11 signature genes, we ranked all ~20,000 genes in the transcriptome by their Spearman correlation with the risk score and ran preranked GSEA against four major pathway libraries (Hallmark, KEGG, Reactome, GO Biological Process):
 
 - **1,384 of 4,045 pathways** were significantly enriched (FDR < 0.25): Hallmark 31/50, KEGG 174/304, Reactome 506/1,147, GO BP 673/2,544.
-- **Enriched in high-risk tumors**: mTORC1 Signaling (Hallmark), NFE2L2 Nuclear Events (Reactome), Proteasome (KEGG), Ribosome Biogenesis (GO BP) — consistent with a proliferative, oxidatively stressed phenotype.
-- **Enriched in low-risk tumors**: Bile Acid Metabolism (Hallmark), Fatty Acid Oxidation (GO BP) — reflecting normal hepatocyte metabolic function.
+- **Enriched in high-risk tumors**: mTORC1 Signaling (Hallmark), NFE2L2 Nuclear Events (Reactome), Proteasome (KEGG), Ribosome Biogenesis (GO BP), consistent with a proliferative, oxidatively stressed phenotype.
+- **Enriched in low-risk tumors**: Bile Acid Metabolism (Hallmark), Fatty Acid Oxidation (GO BP), reflecting normal hepatocyte metabolic function.
 
-This genome-wide analysis confirms that our 11-gene signature is not capturing noise; it is a proxy for a global transcriptomic shift toward oxidative stress, proliferation, and metabolic reprogramming.
+This genome-wide analysis confirms that our 11-gene signature is a proxy for a global transcriptomic shift toward oxidative stress, proliferation, and metabolic reprogramming rather than noise.
 
 ### Somatic Mutation Landscape
 
@@ -122,27 +122,27 @@ Using cBioPortal mutation data for TCGA-LIHC, we compared mutation frequencies o
 | **TSC2** | 5.3% | 0.7% | 8.39 | 0.036 |
 | **BAP1** | 3.3% | 9.9% | 0.31 | 0.035 |
 
-The enrichment of TP53 mutations in high-risk tumors is consistent with the loss of p53-mediated ferroptosis regulation. KEAP1 mutations — which constitutively activate NRF2 — provide a direct genetic link to the antioxidant rewiring captured by our signature. TSC2 mutations (mTORC1 regulator, OR=8.39) in high-risk tumors align with the GSEA finding that mTORC1 signaling is the top enriched Hallmark pathway. The CTNNB1/TP53 molecular class mapping showed that our high-risk group is strongly enriched for the TP53-mutant class (64.8% high-risk) and dual TP53+CTNNB1 mutants (88.2% high-risk), while the "Neither" group was predominantly low-risk (67.1%). Chi-squared test for association between molecular class and risk group: p < 0.0001.
+The enrichment of TP53 mutations in high-risk tumors is consistent with the loss of p53-mediated ferroptosis regulation. KEAP1 mutations, which constitutively activate NRF2, provide a direct genetic link to the antioxidant rewiring captured by our signature. TSC2 mutations (mTORC1 regulator, OR=8.39) in high-risk tumors align with the GSEA finding that mTORC1 signaling is the top enriched Hallmark pathway. The CTNNB1/TP53 molecular class mapping showed that our high-risk group is strongly enriched for the TP53-mutant class (64.8% high-risk) and dual TP53+CTNNB1 mutants (88.2% high-risk), while the "Neither" group was predominantly low-risk (67.1%). Chi-squared test for association between molecular class and risk group: p < 0.0001.
 
 ### Drug Sensitivity
 
 Using cancer cell line pharmacogenomic data:
 - **Erastin** (ferroptosis inducer via SLC7A11 inhibition): Strong positive correlation with risk score (r = 0.64, p < 10⁻³⁵), suggesting high-risk tumors may be particularly sensitive to ferroptosis-inducing therapy.
 - **Doxorubicin**: Moderate positive correlation (r = 0.36), consistent with ROS-mediated mechanisms of action.
-- **Sorafenib** (standard-of-care for advanced HCC): No significant correlation — the signature captures biology orthogonal to sorafenib targets.
+- **Sorafenib** (standard-of-care for advanced HCC): No significant correlation. The signature captures biology orthogonal to sorafenib targets.
 
 ### Single-Cell Resolution
 
 Using Human Protein Atlas single-cell RNA-seq data from liver tissue, we determined the cellular origin of each signature gene:
-- **5 genes** are primarily expressed in **hepatocytes** (TXNRD1, SQSTM1, GSR, MSRA, GLRX2) — tumor-intrinsic
-- **3 genes** are primarily expressed in **immune cells** (G6PD in T cells, NCF2 and HMOX1 in Kupffer cells) — reflecting the tumor microenvironment
+- **5 genes** are primarily expressed in **hepatocytes** (TXNRD1, SQSTM1, GSR, MSRA, GLRX2), tumor-intrinsic
+- **3 genes** are primarily expressed in **immune cells** (G6PD in T cells, NCF2 and HMOX1 in Kupffer cells), reflecting the tumor microenvironment
 - **2 genes** are primarily expressed in **stromal cells** (MAFG, SLC7A11)
 
 This mixed origin suggests the signature captures both tumor-autonomous redox rewiring and the oxidative stress response of the surrounding microenvironment.
 
 ### Protein-Level Validation
 
-Using immunohistochemistry data from the Human Protein Atlas, 4 out of 10 evaluable genes showed concordance between mRNA upregulation and protein detection in HCC tissue (TXNRD1, MAFG, GSR, MSRA). The remaining discordances are expected — mRNA-protein correlation is notoriously imperfect, especially for enzymes with high catalytic turnover.
+Using immunohistochemistry data from the Human Protein Atlas, 4 out of 10 evaluable genes showed concordance between mRNA upregulation and protein detection in HCC tissue (TXNRD1, MAFG, GSR, MSRA). The remaining discordances are expected: mRNA-protein correlation is notoriously imperfect, especially for enzymes with high catalytic turnover.
 
 ### Pan-Cancer Generalizability
 
@@ -155,13 +155,13 @@ To test whether ROS/ferroptosis biology carries prognostic information beyond HC
 | **TCGA-STAD** (Stomach Adenocarcinoma) | 388 | 156 | 0.482 | 0.88 | 0.617 (NS) |
 | **TCGA-PAAD** (Pancreatic Adenocarcinoma) | 177 | 93 | 0.525 | 1.43 | 0.311 (NS) |
 
-The signature was significant in **kidney renal clear cell carcinoma** (KIRC), where the VHL-HIF pathway creates a uniquely ROS-dependent tumor microenvironment. The lack of significance in other cancer types is expected — it reflects that our signature captures liver-specific redox biology rather than generic prognostic genes, which is actually a strength for clinical specificity.
+The signature was significant in **kidney renal clear cell carcinoma** (KIRC), where the VHL-HIF pathway creates a uniquely ROS-dependent tumor microenvironment. The lack of significance in other cancer types is expected: it reflects that our signature captures liver-specific redox biology rather than generic prognostic genes, which is actually a strength for clinical specificity.
 
 ### Molecular Subtypes
 
 Consensus clustering on the 11 signature genes identified two molecular subtypes:
-- **Cluster 1** (n=41): High-risk, 70.7% mortality — an oxidatively stressed subtype
-- **Cluster 2** (n=261): Low-risk, 38.3% mortality — a redox-balanced subtype
+- **Cluster 1** (n=41): High-risk, 70.7% mortality, an oxidatively stressed subtype
+- **Cluster 2** (n=261): Low-risk, 38.3% mortality, a redox-balanced subtype
 
 High-risk patients also had significantly higher tumor mutation burden (median 76 vs 66 mutations, p=0.012), consistent with the mutagenic effects of oxidative DNA damage.
 
@@ -211,8 +211,8 @@ Scripts download data automatically from TCGA (via GDC API), GEO, ICGC, Human Pr
 ## Key Takeaways
 
 1. ROS and ferroptosis gene expression patterns carry real prognostic information in HCC, validated across ethnically and geographically diverse cohorts (American, Chinese, Japanese) and an additional GEO cohort (GSE54236).
-2. The signature is biologically coherent — genome-wide GSEA confirms it captures NRF2-mediated antioxidant rewiring, mTORC1 signaling, and metabolic reprogramming, not statistical artifacts.
-3. High-risk patients are enriched for TP53 and KEAP1 mutations, show immune checkpoint dysregulation (SIGLEC15, LAG3), NK cell depletion, high TMB, and strong predicted sensitivity to ferroptosis inducers — all suggesting potential therapeutic strategies.
+2. The signature is biologically coherent: genome-wide GSEA confirms it captures NRF2-mediated antioxidant rewiring, mTORC1 signaling, and metabolic reprogramming, not statistical artifacts.
+3. High-risk patients are enriched for TP53 and KEAP1 mutations, show immune checkpoint dysregulation (SIGLEC15, LAG3), NK cell depletion, high TMB, and strong predicted sensitivity to ferroptosis inducers, all suggesting potential therapeutic strategies.
 4. The signature also validates in kidney cancer (TCGA-KIRC), suggesting the ROS/ferroptosis axis is prognostically relevant in other ROS-dependent malignancies.
 5. The nomogram integrating molecular and clinical features outperforms either alone.
 
@@ -234,7 +234,7 @@ Scripts download data automatically from TCGA (via GDC API), GEO, ICGC, Human Pr
 
 | Feature | Finding | p-value | What It Means |
 |---------|---------|---------|---------------|
-| **Pathway enrichment** | 9/11 genes in NRF2-KEAP1 pathway | 1.2 x 10⁻¹⁶ | Signature captures the master antioxidant defense system |
+| **Pathway enrichment** | 7/11 genes are NRF2-KEAP1 pathway genes (including regulators and interactors) | 1.2 x 10⁻¹⁶ | Signature captures the master antioxidant defense system |
 | **Genome-wide GSEA** | 1,384/4,045 pathways enriched (FDR<0.25) | — | Not random noise — reflects global transcriptomic shift |
 | **Top pathway (high-risk)** | mTORC1 Signaling | FDR < 0.25 | Growth/proliferation signals are active |
 | **Top pathway (low-risk)** | Bile Acid Metabolism | FDR < 0.25 | Normal liver metabolic function preserved |

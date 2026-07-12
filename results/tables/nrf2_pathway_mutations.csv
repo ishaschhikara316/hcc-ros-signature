@@ -1,0 +1,5 @@
+test,high_risk_n,high_risk_pct,low_risk_n,low_risk_pct,odds_ratio,fisher_p,note
+KEAP1 alone,13,8.6,3,2.0,4.65,0.0180568536917777,Individual gene
+NFE2L2 alone,6,4.0,3,2.0,2.04,0.5011722523676047,Individual gene
+NRF2 pathway (KEAP1 or NFE2L2),19,12.6,6,4.0,3.48,0.010888916971499782,Pooled pathway test — biologically justified
+Extended NRF2 (KEAP1/NFE2L2/BACH1),22,14.6,6,4.0,4.12,0.0023649135849384178,Extended pathway test

@@ -1,0 +1,2 @@
+n_nrf2_pathway_genes_signature,n_nrf2_pathway_genes_other,n_nrf2_pathway_genes_total,risk_nrf2_spearman_r,risk_nrf2_p_value,significant,note
+7,6,13,0.7083,2.746290091756912e-47,True,7/11 are NRF2-KEAP1 pathway genes; GLRX2 is not a confirmed NRF2 target and BACH1 is a competitive repressor rather than a direct target

@@ -1,0 +1,2 @@
+fixed_effect_HR,fixed_effect_HR_lower,fixed_effect_HR_upper,fixed_effect_p,random_effects_HR,random_effects_HR_lower,random_effects_HR_upper,random_effects_p,Cochran_Q,Q_p_value,I_squared,tau_squared,n_cohorts,total_patients
+1.697,1.383,2.083,1.3e-06,1.697,1.383,2.083,1.3e-06,1.245,0.742,0.0,0.0,3,532

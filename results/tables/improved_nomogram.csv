@@ -1,0 +1,7 @@
+model,variables,C_index,n
+Risk score only,risk_score,0.6999,302
+Risk + Stage,"risk_score, stage_num",0.7144,279
+Risk + Stage + Age,"risk_score, stage_num, age_years",0.7135,275
+Risk + Stage + Age + Sex,"risk_score, stage_num, age_years, male",0.7221,275
+Full (Risk+Stage+Age+Sex+Grade),"risk_score, stage_num, age_years, male, grade_num",0.7522,232
+Stage only (reference),stage_num,0.5934,279

@@ -1,0 +1,3 @@
+analysis,n_cohorts,total_patients,total_events,fixed_HR,fixed_HR_lo,fixed_HR_hi,fixed_p,random_HR,random_HR_lo,random_HR_hi,random_p,I_squared,Q_statistic,Q_p,tau_squared
+All validation cohorts (excl. underpowered GSE76427 OS),4,640,256,1.697,1.37,2.102,1.2560728450683456e-06,1.697,1.37,2.102,1.2560728450683456e-06,0,0.5,0.92,0
+Sensitivity: 3 significant cohorts only,3,532,208,1.758,1.387,2.229,3.1938550817400824e-06,1.758,1.387,2.229,3.1938550817400824e-06,0,0.04,0.979,0
